@@ -1,4 +1,3 @@
-// components/Contact.jsx
 import React, { useState } from "react";
 import { useIntersectionObserver } from "../hooks/useIntersectionObserver";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
@@ -21,7 +20,6 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission
     console.log("Form submitted:", formData);
   };
 
@@ -47,8 +45,8 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 bg-gray-800/50">
-      <div className="container mx-auto px-6">
+    <section id="contact" className="py-16 md:py-20 bg-gray-800/50">
+      <div className="container mx-auto px-4 sm:px-6">
         <div
           ref={ref}
           className={`transition-all duration-1000 ${
@@ -56,37 +54,40 @@ const Contact = () => {
           }`}
         >
           {/* Section Header */}
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
               Get In <span className="text-blue-500">Touch</span>
             </h2>
-            <div className="w-24 h-1 bg-blue-500 mx-auto mb-6"></div>
-            <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+            <div className="w-20 sm:w-24 h-1 bg-blue-500 mx-auto mb-6"></div>
+            <p className="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto px-2">
               Let's discuss your next project or just say hello!
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-            {/* Contact Information */}
+          {/* Main Content Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 max-w-6xl mx-auto">
+            {/* Contact Info */}
             <div>
-              <h3 className="text-2xl font-bold text-white mb-8">
+              <h3 className="text-xl sm:text-2xl font-bold text-white mb-6 sm:mb-8">
                 Let's talk!
               </h3>
 
-              <div className="space-y-6 mb-8">
+              <div className="space-y-4 sm:space-y-6 mb-8">
                 {contactInfo.map(
                   ({ icon: Icon, label, value, href }, index) => (
                     <a
                       key={index}
                       href={href}
-                      className="flex items-center p-4 bg-gray-700/30 rounded-xl hover:bg-gray-700/50 transition-all duration-300 group border border-gray-600 hover:border-blue-500"
+                      className="flex items-center p-3 sm:p-4 bg-gray-700/30 rounded-xl hover:bg-gray-700/50 transition-all duration-300 group border border-gray-600 hover:border-blue-500"
                     >
-                      <div className="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center mr-4 group-hover:bg-blue-500/30 transition-colors">
-                        <Icon className="text-blue-500" size={24} />
+                      <div className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-500/20 rounded-lg flex items-center justify-center mr-3 sm:mr-4 group-hover:bg-blue-500/30 transition-colors">
+                        <Icon className="text-blue-500" size={22} />
                       </div>
                       <div>
                         <div className="text-gray-400 text-sm">{label}</div>
-                        <div className="text-white font-semibold">{value}</div>
+                        <div className="text-white font-semibold text-sm sm:text-base break-words">
+                          {value}
+                        </div>
                       </div>
                     </a>
                   )
@@ -94,15 +95,17 @@ const Contact = () => {
               </div>
 
               {/* Social Links */}
-              <div className="bg-gray-700/30 p-6 rounded-xl border border-gray-600">
-                <h4 className="text-white font-semibold mb-4">Follow me on</h4>
-                <div className="flex space-x-4">
+              <div className="bg-gray-700/30 p-5 sm:p-6 rounded-xl border border-gray-600">
+                <h4 className="text-white font-semibold mb-3 sm:mb-4">
+                  Follow me on
+                </h4>
+                <div className="flex flex-wrap gap-3 sm:space-x-4">
                   {["Github", "LinkedIn", "Instagram", "Whatsapp"].map(
                     (platform) => (
                       <a
                         key={platform}
                         href="#"
-                        className="bg-gray-600 hover:bg-blue-600 text-white px-4 py-2 rounded-lg transition-colors duration-300"
+                        className="bg-gray-600 hover:bg-blue-600 text-white px-3 py-2 rounded-lg text-sm sm:text-base transition-colors duration-300"
                       >
                         {platform}
                       </a>
@@ -113,9 +116,9 @@ const Contact = () => {
             </div>
 
             {/* Contact Form */}
-            <div className="bg-gray-700/30 p-8 rounded-xl border border-gray-600">
+            <div className="bg-gray-700/30 p-6 sm:p-8 rounded-xl border border-gray-600">
               <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="name" className="block text-gray-300 mb-2">
                       Your Name
@@ -173,7 +176,7 @@ const Contact = () => {
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
-                    rows="6"
+                    rows="5"
                     className="w-full px-4 py-3 bg-gray-600 border border-gray-500 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-500 transition-colors resize-none"
                     placeholder="Tell me about your project..."
                     required
@@ -182,7 +185,7 @@ const Contact = () => {
 
                 <button
                   type="submit"
-                  className="w-full bg-blue-600 hover:bg-blue-700 text-white py-4 px-6 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2"
+                  className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 sm:py-4 px-6 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2"
                 >
                   <Send size={20} />
                   Send Message
