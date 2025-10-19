@@ -1,107 +1,117 @@
-import React from "react";
-import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
-import { useRef } from "react";
+import { useIntersectionObserver } from "../hooks/useIntersectionObserver";
+import { Calendar, MapPin } from "lucide-react";
 
 const Experience = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
+  const [ref, isVisible] = useIntersectionObserver();
 
   const experiences = [
     {
-      company: "Tech Startup Inc.",
-      role: "Senior Full Stack Developer",
-      period: "2022 - Present",
-      description: [
-        "Led development of a SaaS product serving 10,000+ active users",
-        "Implemented microservices architecture reducing latency by 40%",
-        "Mentored 3 junior developers and established coding standards",
-        "Collaborated with product team to implement user-facing features",
+      id: 1,
+      role: "FreeLancer - Frontend Developer",
+      company: "-",
+      period: "2023 - Present",
+      location: "-",
+      description:
+        "Getting a project from the company for developing or maintaining the project",
+      achievements: [
+        "Experience working on the project alone",
+        "Manage to solve the problem within the time",
+        "Better improvement on the communication with the client",
       ],
     },
     {
-      company: "Digital Agency Co.",
-      role: "Frontend Developer",
-      period: "2020 - 2022",
-      description: [
-        "Developed responsive web applications for Fortune 500 clients",
-        "Worked with React, Vue, and modern JavaScript frameworks",
-        "Improved website performance scores by 30% across projects",
-        "Participated in client meetings and technical planning sessions",
-      ],
-    },
-    {
-      company: "Freelance",
-      role: "Web Developer",
-      period: "2019 - 2020",
-      description: [
-        "Built custom websites and web applications for small businesses",
-        "Managed projects from conception to deployment",
-        "Worked with various CMS platforms and e-commerce solutions",
-        "Developed strong client communication and project management skills",
+      id: 2,
+      role: "Backend Developer",
+      company: "Syarikat Air Darul Aman",
+      period: "2023 January - 2023 June",
+      location: "On-Site",
+      description:
+        "Performing my first internship on the company as backend developer and developing the Clinic Panel site for company.",
+      achievements: [
+        "Contribute the project by developing the project using Laravel.",
+        "Learning new knowledge about new technologies and programming language.",
+        "Received positif feedback from the company to the project",
       ],
     },
   ];
 
   return (
-    <section id="experience" className="py-20 bg-white">
+    <section id="experience" className="py-20">
       <div className="container mx-auto px-6">
-        <motion.div
+        <div
           ref={ref}
-          initial={{ opacity: 0, y: 50 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-          transition={{ duration: 0.6 }}
-          className="max-w-4xl mx-auto"
+          className={`transition-all duration-1000 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+          }`}
         >
-          <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
-            Work Experience
-          </h2>
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+              Work <span className="text-blue-500">Experience</span>
+            </h2>
+            <div className="w-24 h-1 bg-blue-500 mx-auto mb-6"></div>
+            <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+              My professional journey and career milestones
+            </p>
+          </div>
 
-          <div className="space-y-12">
+          {/* Timeline */}
+          <div className="max-w-4xl mx-auto">
             {experiences.map((exp, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: -50 }}
-                animate={
-                  isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }
-                }
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-                className="relative pl-8 border-l-2 border-primary-500"
+              <div
+                key={exp.id}
+                className={`flex flex-col md:flex-row ${
+                  index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+                } mb-12`}
               >
-                {/* Timeline dot */}
-                <div className="absolute -left-2.5 top-0 w-5 h-5 bg-primary-500 rounded-full border-4 border-white"></div>
+                {/* Timeline Line */}
+                <div className="flex items-center justify-center md:w-24 relative">
+                  <div className="hidden md:block absolute top-0 bottom-0 w-0.5 bg-blue-500"></div>
+                  <div className="w-4 h-4 bg-blue-500 rounded-full border-4 border-gray-900 z-10"></div>
+                </div>
 
-                <div className="bg-gray-50 rounded-lg p-6 hover:shadow-md transition-shadow">
+                {/* Content */}
+                <div className="flex-1 bg-gray-800/50 p-6 rounded-xl border border-gray-700 hover:border-blue-500 transition-all duration-300 transform hover:-translate-y-1 ml-0 md:ml-6 mt-4 md:mt-0">
                   <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-4">
                     <div>
-                      <h3 className="text-xl font-semibold text-gray-900">
+                      <h3 className="text-xl font-bold text-white mb-2">
                         {exp.role}
                       </h3>
-                      <p className="text-primary-600 font-medium">
+                      <h4 className="text-lg text-blue-400 mb-2">
                         {exp.company}
-                      </p>
+                      </h4>
                     </div>
-                    <span className="text-gray-500 text-sm mt-1 sm:mt-0">
-                      {exp.period}
-                    </span>
+                    <div className="flex items-center space-x-4 text-gray-400 text-sm mt-2 sm:mt-0">
+                      <div className="flex items-center">
+                        <Calendar size={16} className="mr-1" />
+                        {exp.period}
+                      </div>
+                      <div className="flex items-center">
+                        <MapPin size={16} className="mr-1" />
+                        {exp.location}
+                      </div>
+                    </div>
                   </div>
 
-                  <ul className="space-y-2">
-                    {exp.description.map((item, itemIndex) => (
-                      <li
-                        key={itemIndex}
-                        className="text-gray-600 flex items-start"
-                      >
-                        <span className="text-primary-500 mr-3">▸</span>
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
+                  <p className="text-gray-300 mb-4 leading-relaxed">
+                    {exp.description}
+                  </p>
+
+                  <div className="space-y-2">
+                    <h5 className="font-semibold text-white">
+                      Key Achievements:
+                    </h5>
+                    <ul className="list-disc list-inside text-gray-400 space-y-1">
+                      {exp.achievements.map((achievement, idx) => (
+                        <li key={idx}>{achievement}</li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

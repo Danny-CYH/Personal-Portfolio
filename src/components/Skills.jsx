@@ -1,87 +1,81 @@
-import React from "react";
-import {
-  FaReact,
-  FaNodeJs,
-  FaJs,
-  FaPython,
-  FaGitAlt,
-  FaFigma,
-} from "react-icons/fa";
-import {
-  SiTailwindcss,
-  SiMongodb,
-  SiTypescript,
-  SiNextdotjs,
-  SiVite,
-  SiExpress,
-} from "react-icons/si";
-
 const Skills = () => {
-  const skills = [
-    { name: "React", icon: FaReact, level: 90, color: "text-blue-500" },
-    { name: "JavaScript", icon: FaJs, level: 85, color: "text-yellow-500" },
+  const skillCategories = [
     {
-      name: "TypeScript",
-      icon: SiTypescript,
-      level: 80,
-      color: "text-blue-600",
-    },
-    { name: "Node.js", icon: FaNodeJs, level: 75, color: "text-green-600" },
-    {
-      name: "Tailwind CSS",
-      icon: SiTailwindcss,
-      level: 95,
-      color: "text-cyan-500",
+      category: "Frontend",
+      skills: [
+        { name: "React", level: 50 },
+        { name: "Css", level: 70 },
+        { name: "Tailwind CSS", level: 80 },
+        { name: "Bootstrap", level: 90 },
+      ],
     },
     {
-      name: "Next.js",
-      icon: SiNextdotjs,
-      level: 70,
-      color: "text-gray-800 dark:text-white",
+      category: "Backend",
+      skills: [
+        { name: "Laravel", level: 85 },
+        { name: "Python", level: 70 },
+        { name: "Java", level: 70 },
+        { name: "JavaScript", level: 75 },
+      ],
     },
-    { name: "Vite", icon: SiVite, level: 85, color: "text-purple-500" },
-    { name: "Express.js", icon: SiExpress, level: 75, color: "text-gray-600" },
-    { name: "Python", icon: FaPython, level: 65, color: "text-yellow-600" },
-    { name: "MongoDB", icon: SiMongodb, level: 70, color: "text-green-500" },
-    { name: "Git", icon: FaGitAlt, level: 85, color: "text-orange-600" },
-    { name: "Figma", icon: FaFigma, level: 60, color: "text-purple-600" },
+    {
+      category: "Tools & Others",
+      skills: [
+        { name: "Git", level: 85 },
+        { name: "Docker", level: 40 },
+        { name: "CPanel", level: 50 },
+        { name: "Figma", level: 70 },
+        { name: "Supabase", level: 50 },
+      ],
+    },
   ];
 
   return (
-    <section id="skills" className="py-20 bg-gray-50 dark:bg-gray-800">
-      <div className="container mx-auto px-6">
-        <h2 className="text-4xl md:text-5xl font-bold text-center text-gray-900 dark:text-white mb-16">
-          My <span className="text-primary">Skills</span>
-        </h2>
+    <section id="skills" className="py-16 lg:py-24">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section Header */}
+        <div className="text-center mb-16">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+            My <span className="text-blue-600 dark:text-blue-400">Skills</span>
+          </h2>
+          <div className="w-20 h-1 bg-blue-600 dark:bg-blue-400 mx-auto mb-6"></div>
+          <p className="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto">
+            Technologies and tools I use to bring ideas to life
+          </p>
+        </div>
 
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {skills.map((skill, index) => (
-              <div
-                key={skill.name}
-                className="bg-white dark:bg-gray-900 rounded-xl p-6 text-center shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div
-                  className={`text-4xl mb-4 ${skill.color} group-hover:scale-110 transition-transform duration-300`}
-                >
-                  <skill.icon />
-                </div>
-                <h3 className="font-semibold text-gray-900 dark:text-white mb-3">
-                  {skill.name}
-                </h3>
-                <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
-                  <div
-                    className="bg-primary h-2 rounded-full transition-all duration-1000 ease-out"
-                    style={{ width: `${skill.level}%` }}
-                  ></div>
-                </div>
-                <span className="text-sm text-gray-500 dark:text-gray-400 mt-2 block">
-                  {skill.level}%
-                </span>
+        {/* Skills Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
+          {skillCategories.map((category, categoryIndex) => (
+            <div
+              key={categoryIndex}
+              className="bg-white dark:bg-gray-800 p-6 rounded-xl border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-all duration-300"
+            >
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-6 text-center">
+                {category.category}
+              </h3>
+              <div className="space-y-4">
+                {category.skills.map((skill, skillIndex) => (
+                  <div key={skillIndex} className="space-y-2">
+                    <div className="flex justify-between text-sm">
+                      <span className="text-gray-700 dark:text-gray-300 font-medium">
+                        {skill.name}
+                      </span>
+                      <span className="text-blue-600 dark:text-blue-400 font-semibold">
+                        {skill.level}%
+                      </span>
+                    </div>
+                    <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                      <div
+                        className="bg-gradient-to-r from-blue-500 to-purple-600 h-2 rounded-full transition-all duration-1000 ease-out"
+                        style={{ width: `${skill.level}%` }}
+                      ></div>
+                    </div>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

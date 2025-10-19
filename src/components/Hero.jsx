@@ -1,141 +1,127 @@
-import React from "react";
-import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, ArrowDown } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
+import myImage from "../assets/my_image.jpg";
+import {
+  Github,
+  Linkedin,
+  Mail,
+  Download,
+  ArrowDown,
+  Instagram,
+} from "lucide-react";
 
 const Hero = () => {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { y: 30, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.6,
-      },
-    },
-  };
-
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center pt-20 pb-16"
+      className="min-h-screen flex items-center justify-center pt-16 pb-12 px-4 sm:px-6 lg:px-8 w-full overflow-hidden"
     >
-      <div className="container mx-auto px-6">
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-          className="max-w-4xl mx-auto text-center"
-        >
-          {/* Intro Text */}
-          <motion.p
-            variants={itemVariants}
-            className="text-primary-600 font-medium mb-4"
-          >
-            Hi, my name is
-          </motion.p>
+      <div className="max-w-7xl mx-auto w-full">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          {/* Text Content */}
+          <div className="text-center lg:text-left space-y-6 w-full">
+            <div className="space-y-4">
+              <p className="text-blue-600 dark:text-blue-400 font-medium text-lg">
+                Hello, I'm
+              </p>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white leading-tight">
+                Danny{" "}
+                <span className="text-blue-600 dark:text-blue-400">Cheng</span>
+              </h1>
+              <h2 className="text-xl sm:text-2xl lg:text-3xl text-gray-600 dark:text-gray-300 font-medium">
+                Full Stack Developer
+              </h2>
+            </div>
 
-          {/* Name */}
-          <motion.h1
-            variants={itemVariants}
-            className="text-5xl md:text-7xl font-bold text-gray-900 mb-6"
-          >
-            John Doe
-          </motion.h1>
+            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+              A passionate developer with expertise in Full Stack Development. I
+              enjoy building responsive websites, mobile applications, and SaaS
+              platforms.
+            </p>
 
-          {/* Title */}
-          <motion.h2
-            variants={itemVariants}
-            className="text-3xl md:text-5xl font-bold text-gray-600 mb-8"
-          >
-            I build things for the web.
-          </motion.h2>
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
+              <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center gap-2 sm:gap-3 text-base sm:text-lg w-full sm:w-auto">
+                <Download size={20} />
+                Download Resume
+              </button>
+              <button className="border-2 border-gray-300 dark:border-gray-600 hover:border-blue-500 text-gray-700 dark:text-gray-300 px-6 py-3 sm:px-8 sm:py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2 sm:gap-3 text-base sm:text-lg w-full sm:w-auto">
+                View My Work
+              </button>
+            </div>
 
-          {/* Description */}
-          <motion.p
-            variants={itemVariants}
-            className="text-lg md:text-xl text-gray-500 mb-12 max-w-2xl mx-auto leading-relaxed"
-          >
-            I'm a full-stack developer specializing in building exceptional
-            digital experiences. Currently, I'm focused on creating accessible,
-            human-centered products.
-          </motion.p>
+            {/* Social Links */}
+            <div className="flex justify-center lg:justify-start space-x-4 pt-4">
+              {[
+                {
+                  icon: Github,
+                  href: "https://github.com/BrandonCYH",
+                  label: "GitHub",
+                },
+                {
+                  icon: Linkedin,
+                  href: "www.linkedin.com/in/cheng-yang-ho-6a222b289",
+                  label: "LinkedIn",
+                },
+                {
+                  icon: Instagram,
+                  href: "https://www.instagram.com/cyh2870?igsh=amo5MTRqeHkwc2R5",
+                  label: "Instagram",
+                },
+                {
+                  icon: FaWhatsapp,
+                  href: "https://wa.me/60189724865?text=Hello",
+                  label: "Whatsapp",
+                },
+              ].map(({ icon: Icon, href, label }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 transform hover:scale-110 p-2 sm:p-3 bg-gray-100 dark:bg-gray-800 rounded-lg flex-shrink-0"
+                  aria-label={label}
+                >
+                  <Icon size={20} className="sm:w-6 sm:h-6" />
+                </a>
+              ))}
+            </div>
+          </div>
 
-          {/* CTA Buttons */}
-          <motion.div
-            variants={itemVariants}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
-          >
-            <motion.a
-              href="#work"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-primary-600 text-white px-8 py-4 rounded-lg font-medium hover:bg-primary-700 transition-colors"
-            >
-              View My Work
-            </motion.a>
-            <motion.a
-              href="#contact"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="border border-gray-300 text-gray-700 px-8 py-4 rounded-lg font-medium hover:border-gray-400 transition-colors"
-            >
-              Get In Touch
-            </motion.a>
-          </motion.div>
+          {/* Profile Image - Hidden on very small screens, shown from sm upwards */}
+          <div className="relative order-first lg:order-last w-full flex justify-center">
+            <div className="relative w-48 h-48 sm:w-64 sm:h-64 lg:w-80 lg:h-80 xl:w-96 xl:h-96">
+              {/* Background Decoration */}
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl transform rotate-6"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl transform -rotate-6"></div>
 
-          {/* Social Links */}
-          <motion.div
-            variants={itemVariants}
-            className="flex justify-center space-x-6 mb-16"
-          >
-            {[
-              { icon: Github, href: "https://github.com", label: "GitHub" },
-              {
-                icon: Linkedin,
-                href: "https://linkedin.com",
-                label: "LinkedIn",
-              },
-              { icon: Mail, href: "mailto:john@example.com", label: "Email" },
-            ].map((social, index) => (
-              <motion.a
-                key={social.label}
-                href={social.href}
-                whileHover={{ scale: 1.2, y: -2 }}
-                whileTap={{ scale: 0.9 }}
-                className="text-gray-400 hover:text-gray-600 transition-colors p-3"
-                aria-label={social.label}
-              >
-                <social.icon size={20} />
-              </motion.a>
-            ))}
-          </motion.div>
+              {/* Profile Image */}
+              <div className="relative bg-white dark:bg-gray-800 rounded-2xl overflow-hidden border-4 sm:border-8 border-white dark:border-gray-800 shadow-2xl w-full h-full">
+                <img
+                  src={myImage}
+                  alt="Danny CYH"
+                  className="w-full h-full object-cover"
+                />
+              </div>
 
-          {/* Scroll Indicator */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1 }}
-            className="flex flex-col items-center text-gray-400"
+              {/* Status Indicator */}
+              <div className="absolute bottom-2 right-2 sm:bottom-4 sm:right-4 w-4 h-4 sm:w-6 sm:h-6 bg-green-500 rounded-full border-2 sm:border-4 border-white dark:border-gray-800 shadow-lg"></div>
+            </div>
+          </div>
+        </div>
+
+        {/* Scroll Indicator */}
+        <div className="flex justify-center mt-12 lg:mt-8">
+          <button
+            onClick={() =>
+              document
+                .getElementById("about")
+                ?.scrollIntoView({ behavior: "smooth" })
+            }
+            className="flex flex-col items-center text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors group"
           >
-            <span className="text-sm mb-2">Scroll to explore</span>
-            <motion.div
-              animate={{ y: [0, 8, 0] }}
-              transition={{ duration: 2, repeat: Infinity }}
-            >
-              <ArrowDown size={20} />
-            </motion.div>
-          </motion.div>
-        </motion.div>
+            <span className="text-sm mb-2">Scroll Down</span>
+            <ArrowDown size={20} className="animate-bounce" />
+          </button>
+        </div>
       </div>
     </section>
   );

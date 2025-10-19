@@ -1,111 +1,113 @@
+// components/About.jsx
 import React from "react";
-import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
-import { useRef } from "react";
+import { Code, Palette, Rocket, Users } from "lucide-react";
 
 const About = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
-
-  const skills = [
-    "JavaScript (ES6+)",
-    "TypeScript",
-    "React",
-    "Next.js",
-    "Node.js",
-    "Python",
-    "Tailwind CSS",
-    "GraphQL",
-    "PostgreSQL",
-    "AWS",
+  const features = [
+    {
+      icon: Code,
+      title: "Clean Code",
+      description:
+        "Writing maintainable and scalable code following best practices",
+    },
+    {
+      icon: Palette,
+      title: "Beautiful Design",
+      description: "Creating visually appealing and user-friendly interfaces",
+    },
+    {
+      icon: Rocket,
+      title: "Fast Performance",
+      description: "Optimizing for speed and smooth user experiences",
+    },
+    {
+      icon: Users,
+      title: "User Focused",
+      description: "Putting users at the center of every design decision",
+    },
   ];
 
   return (
-    <section id="about" className="py-20 bg-gray-50">
-      <div className="container mx-auto px-6">
-        <motion.div
-          ref={ref}
-          initial={{ opacity: 0, y: 50 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-          transition={{ duration: 0.6 }}
-          className="max-w-4xl mx-auto"
-        >
-          <div className="grid md:grid-cols-5 gap-12 items-start">
-            {/* Left Column - Text */}
-            <div className="md:col-span-3">
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                About Me
-              </h2>
-              <div className="space-y-4 text-gray-600 leading-relaxed">
-                <p>
-                  Hello! I'm John, a full-stack developer with a passion for
-                  creating digital solutions that make a difference. My journey
-                  in web development started back in 2019 when I decided to turn
-                  my passion for technology into a career.
-                </p>
-                <p>
-                  Fast-forward to today, and I've had the privilege of working
-                  at
-                  <span className="text-gray-900 font-medium"> a start-up</span>
-                  ,
-                  <span className="text-gray-900 font-medium">
-                    {" "}
-                    a huge corporation
-                  </span>
-                  , and
-                  <span className="text-gray-900 font-medium">
-                    {" "}
-                    a student-led design studio
-                  </span>
-                  . My main focus these days is building accessible, inclusive
-                  products and digital experiences.
-                </p>
-                <p>
-                  I also recently launched a course that covers everything you
-                  need to build a web app with the Spotify API using Node &
-                  React.
-                </p>
-                <p>
-                  Here are a few technologies I've been working with recently:
-                </p>
-              </div>
+    <section
+      id="about"
+      className="py-12 lg:py-24 bg-gray-50 dark:bg-gray-800 w-full overflow-hidden"
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        {/* Section Header */}
+        <div className="text-center mb-12 lg:mb-16">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+            About <span className="text-blue-600 dark:text-blue-400">Me</span>
+          </h2>
+          <div className="w-20 h-1 bg-blue-600 dark:bg-blue-400 mx-auto mb-4 lg:mb-6"></div>
+          <p className="text-gray-600 dark:text-gray-400 text-base lg:text-lg max-w-2xl mx-auto px-4">
+            Passionate in web and mobile development
+          </p>
+        </div>
+
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center max-w-7xl mx-auto">
+          {/* Content */}
+          <div className="space-y-4 lg:space-y-6">
+            <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white text-center lg:text-left">
+              Crafting Digital Experiences
+            </h3>
+            <div className="space-y-3 lg:space-y-4 text-gray-600 dark:text-gray-400">
+              <p className="leading-relaxed text-base lg:text-lg text-center lg:text-left">
+                I'm a passionate full-stack developer specializing in modern web
+                and mobile technologies. I love solving complex problems,
+                designing beautiful and interactive page, and developing a
+                software.
+              </p>
+              <p className="leading-relaxed text-base lg:text-lg text-center lg:text-left">
+                When I'm not coding, you'll find me exploring new technologies,
+                learning new programming language, or sharing knowledge and
+                experience with other developer.
+              </p>
             </div>
 
-            {/* Right Column - Image & Skills */}
-            <div className="md:col-span-2">
-              {/* Profile Image */}
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                className="relative group mb-8"
-              >
-                <div className="w-full aspect-square bg-gradient-to-br from-primary-500 to-primary-700 rounded-lg overflow-hidden">
-                  <div className="w-full h-full bg-gray-300 flex items-center justify-center">
-                    <span className="text-gray-600 text-lg">Profile Image</span>
-                  </div>
+            {/* Stats */}
+            <div className="grid grid-cols-2 gap-4 lg:gap-6 pt-4 max-w-xs mx-auto lg:mx-0">
+              <div className="text-center">
+                <div className="text-2xl sm:text-3xl font-bold text-blue-600 dark:text-blue-400 mb-1 lg:mb-2">
+                  2
                 </div>
-                <div className="absolute inset-0 border-2 border-primary-500 rounded-lg translate-x-4 translate-y-4 -z-10 group-hover:translate-x-6 group-hover:translate-y-6 transition-transform"></div>
-              </motion.div>
-
-              {/* Skills Grid */}
-              <div className="grid grid-cols-2 gap-2">
-                {skills.map((skill, index) => (
-                  <motion.div
-                    key={skill}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={
-                      isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }
-                    }
-                    transition={{ delay: index * 0.1 }}
-                    className="flex items-center text-gray-600"
-                  >
-                    <span className="w-2 h-2 bg-primary-500 rounded-full mr-3"></span>
-                    {skill}
-                  </motion.div>
-                ))}
+                <div className="text-gray-600 dark:text-gray-400 text-sm">
+                  Projects Completed
+                </div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl sm:text-3xl font-bold text-green-600 dark:text-green-400 mb-1 lg:mb-2">
+                  5+
+                </div>
+                <div className="text-gray-600 dark:text-gray-400 text-sm">
+                  Learning Technology
+                </div>
               </div>
             </div>
           </div>
-        </motion.div>
+
+          {/* Features Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6">
+            {features.map(({ icon: Icon, title, description }, index) => (
+              <div
+                key={index}
+                className="bg-white dark:bg-gray-700 p-4 lg:p-6 rounded-xl hover:shadow-lg transition-all duration-300 border border-gray-200 dark:border-gray-600 group hover:border-blue-500 dark:hover:border-blue-400"
+              >
+                <div className="w-10 h-10 lg:w-12 lg:h-12 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center mb-3 lg:mb-4 group-hover:scale-110 transition-transform duration-300 mx-auto lg:mx-0">
+                  <Icon
+                    className="text-blue-600 dark:text-blue-400 lg:w-6 lg:h-6"
+                    size={20}
+                  />
+                </div>
+                <h4 className="text-gray-900 dark:text-white font-semibold text-center lg:text-left mb-2 text-base lg:text-lg">
+                  {title}
+                </h4>
+                <p className="text-gray-600 dark:text-gray-400 text-sm text-center lg:text-left leading-relaxed">
+                  {description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );
