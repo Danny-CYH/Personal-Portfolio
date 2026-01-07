@@ -1,16 +1,89 @@
-# React + Vite
+# 🎨 Danny Cheng - Developer Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## ✨ Overview
+A modern, interactive portfolio website showcasing my skills, projects, and experience as a Full-Stack Developer. Built with a focus on clean design, smooth animations, and responsive functionality.
 
-Currently, two official plugins are available:
+## 🌟 Key Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### **Immersive User Experience**
+- **Dynamic Typing Effect**: Animated hero section with rotating role descriptions
+- **Dark/Light Mode**: Seamless theme switching with system preference detection
+- **Smooth Navigation**: Auto-active navbar that highlights current section during scroll
+- **Interactive Elements**: Hover animations, gradient effects, and motion transitions
 
-## React Compiler
+### **Content Showcase**
+- **Project Gallery**: Featured works with detailed descriptions and tech stacks
+- **Experience Timeline**: Chronological display of work history and education
+- **Skills Visualization**: Tech stack with categorized icons and emoji representation
+- **Contact Integration**: Direct links to resume, GitHub, and contact information
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🎯 Design Philosophy
 
-## Expanding the ESLint configuration
+### **Visual Design**
+- **Gradient Color Scheme**: Blue-to-purple gradients for visual impact
+- **Glass Morphism**: Frosted glass effects with backdrop blur
+- **Consistent Spacing**: Balanced layout with attention to whitespace
+- **Responsive Grids**: Adaptive layouts for all screen sizes
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### **Interactive Elements**
+- **Floating Animations**: Subtle movements for visual interest
+- **Hover States**: Interactive feedback on buttons and cards
+- **Scroll Effects**: Parallax-like section transitions
+- **Mobile Optimization**: Touch-friendly interface with hamburger menu
+
+## 📱 Technical Highlights
+
+### **Performance**
+- Optimized bundle size with Vite
+- Lazy loading for images and components
+- Efficient animations using Framer Motion
+- Minimal dependencies for faster load times
+
+### **Accessibility**
+- Semantic HTML structure
+- Keyboard navigation support
+- ARIA labels for interactive elements
+- Color contrast compliance
+
+## 🏗️ Architecture
+
+### **Component-Based Structure**
+- Modular React components for maintainability
+- Prop-driven customization
+- Reusable UI patterns
+- Centralized styling with Tailwind CSS
+
+### **State Management**
+- Local state for UI interactions
+- Context-free design for simplicity
+- Efficient re-rendering strategies
+- Scroll-based state updates
+
+## 🎨 Visual Elements
+
+### **Hero Section**
+- Animated developer illustration with floating elements
+- Rotating tech badges with glow effects
+- Gradient text effects for emphasis
+- Call-to-action buttons with smooth transitions
+
+### **Project Cards**
+- Consistent height layout regardless of content length
+- Image placeholders with fallback options
+- Tag-based categorization system
+- GitHub integration with live preview links
+
+### **Experience Section**
+- Timeline-based presentation
+- Company logos and role descriptions
+- Skill progression visualization
+- Achievement highlights
+
+## 🔗 Integration Features
+
+- **GitHub Repository Links**: Direct access to project codebases
+- **Resume Download**: PDF download functionality
+- **Contact Form**: Ready-to-use contact section
+- **Social Media Links**: Professional network connections
+
+---
