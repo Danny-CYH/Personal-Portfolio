@@ -11,60 +11,11 @@ import {
   Award,
 } from "lucide-react";
 
+import { skills } from "../constants/About/skills";
+import { educations } from "../constants/About/educations";
+import { certifications } from "../constants/About/certifications";
+
 export default function About({ isDarkMode }) {
-  const skills = [
-    { name: "React.js", level: 90, icon: "⚛️", category: "Frontend" },
-    { name: "Vue.js", level: 20, icon: "📘", category: "Frontend" },
-    { name: "Bootstrap", level: 90, icon: "⏭️", category: "Frontend" },
-    { name: "Laravel", level: 75, icon: "🟢", category: "Backend" },
-    { name: "Java", level: 70, icon: "🚀", category: "Backend" },
-    { name: "Supabase", level: 60, icon: "🍃", category: "Database" },
-    { name: "MySQL", level: 80, icon: "🐘", category: "Database" },
-    { name: "AWS", level: 30, icon: "☁️", category: "Cloud" },
-    { name: "Docker", level: 20, icon: "🐳", category: "DevOps" },
-    { name: "Git", level: 95, icon: "📌", category: "Tools" },
-    { name: "Tailwind CSS", level: 92, icon: "🎨", category: "Frontend" },
-    { name: "Python", level: 80, icon: "🐍", category: "Backend" },
-  ];
-
-  const education = [
-    {
-      degree: "Bachelor of Science in Information Technology (Bsc.IT)",
-      institution: "University Utara Malaysia",
-      period: "2023 - 2026",
-      CGPA: "3.8/4.0",
-      achievements: ["Dean's List (3 Semesters)"],
-      relevantCourses: [
-        "Data Structures & Algorithms",
-        "Software Engineering",
-        "Database Systems",
-        "Web Development",
-        "Mobile Programming",
-        "Web Engineering",
-      ],
-    },
-    {
-      degree: "Diploma in Information Technology",
-      institution: "Politeknik Sultan Abdul Halim Mu'adzam Shah",
-      period: "2020 - 2023",
-      CGPA: "3.92/4.0",
-      achievements: ["Dean's List (All Semesters)"],
-      relevantCourses: [
-        "Data Structures",
-        "System Analysis and Design",
-        "Human Computer Interaction",
-        "Web Development Technology",
-        "Mobile App Development",
-      ],
-    },
-  ];
-
-  const certifications = [
-    "Presenter Certificate – International Digital Expert Symposium (deXsym) 2025",
-    "Workshop Participation Certificate - From Local to Web Hosting",
-    "Participant Certificate - Kursus Occupational Safety And Health Coordinator (OSHC)",
-  ];
-
   return (
     <section className="py-20 px-4">
       <div className="container mx-auto">
@@ -363,7 +314,7 @@ export default function About({ isDarkMode }) {
               } shadow-lg`}
             >
               <h3 className="text-2xl font-bold mb-6">Education</h3>
-              {education.map((edu, index) => (
+              {educations.map((edu, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, x: 50 }}
