@@ -26,9 +26,10 @@ const Navbar = ({
         {/* Logo - Button instead of Link */}
         <button
           onClick={() => scrollToSection("home")}
-          className="text-xl font-bold hover:opacity-80 transition md:mx-10"
+          className="flex items-center text-xl font-bold hover:opacity-80 transition md:mx-10"
         >
-          Danny Cheng
+          <img src="/public/developer.png" alt="Logo" className="w-10 h-10 mr-3" />
+          <span className="md:mt-2">Danny Cheng</span>
         </button>
 
         {/* Desktop Navigation - Buttons instead of Links */}
@@ -41,8 +42,8 @@ const Navbar = ({
                 activeSection === item.id
                   ? "text-blue-400 font-medium"
                   : isDarkMode
-                  ? "text-gray-300"
-                  : "text-gray-700"
+                    ? "text-gray-300"
+                    : "text-gray-700"
               }`}
             >
               {item.label}
@@ -99,8 +100,8 @@ const Navbar = ({
                   activeSection === item.id
                     ? "text-blue-400 font-medium"
                     : isDarkMode
-                    ? "text-gray-300"
-                    : "text-gray-700"
+                      ? "text-gray-300"
+                      : "text-gray-700"
                 }`}
               >
                 {item.label}
