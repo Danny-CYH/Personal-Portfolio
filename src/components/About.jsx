@@ -31,9 +31,9 @@ export default function About({ isDarkMode }) {
     {
       degree: "Bachelor of Science in Information Technology (Bsc.IT)",
       institution: "University Utara Malaysia",
-      period: "2023 - Present",
-      CGPA: "3.72/4.0",
-      achievements: ["Dean's List (2 Semesters)"],
+      period: "2023 - 2026",
+      CGPA: "3.8/4.0",
+      achievements: ["Dean's List (3 Semesters)"],
       relevantCourses: [
         "Data Structures & Algorithms",
         "Software Engineering",
