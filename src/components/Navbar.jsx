@@ -22,7 +22,7 @@ const Navbar = ({
           onClick={() => scrollToSection("home")}
           className="flex items-center text-xl font-bold hover:opacity-80 transition md:mx-10"
         >
-          <img src="/developer.png" alt="Logo" className="w-10 h-10 mr-3" />
+          <img src="../../public/developer.png" alt="Logo" className="w-10 h-10 mr-3" />
           <span className="md:mt-1">Danny Cheng</span>
         </button>
 
