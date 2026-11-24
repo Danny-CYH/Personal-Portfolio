@@ -130,7 +130,7 @@ export default function About({ isDarkMode }) {
                     isDarkMode ? "text-gray-400" : "text-gray-600"
                   }`}
                 >
-                  Full-Stack Web Developer
+                  Web & Mobile Developer
                 </p>
 
                 <div className="space-y-4">
@@ -140,6 +140,16 @@ export default function About({ isDarkMode }) {
                       <p className="font-medium">Software Engineering</p>
                       <p className="text-sm opacity-75">
                         Bachelor of Science with Honours ( IT )
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center">
+                    <GraduationCap className="w-5 h-5 text-blue-500 mr-3" />
+                    <div>
+                      <p className="font-medium">Digital Technology</p>
+                      <p className="text-sm opacity-75">
+                        Diploma In Information Technology
                       </p>
                     </div>
                   </div>
@@ -155,7 +165,7 @@ export default function About({ isDarkMode }) {
                   <div className="flex items-center">
                     <Calendar className="w-5 h-5 text-green-500 mr-3" />
                     <div>
-                      <p className="font-medium">5 Years</p>
+                      <p className="font-medium">6 Years</p>
                       <p className="text-sm opacity-75">
                         Learning Technology and Development
                       </p>
@@ -167,21 +177,21 @@ export default function About({ isDarkMode }) {
                 <div className="grid grid-cols-3 gap-4 mt-8 pt-6 border-t border-gray-700/50">
                   <div className="text-center">
                     <div className="text-2xl font-bold bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
-                      3
+                      8
                     </div>
-                    <div className="text-sm opacity-75">Projects</div>
+                    <div className="text-sm opacity-75">Repos</div>
                   </div>
                   <div className="text-center">
                     <div className="text-2xl font-bold bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
-                      4
+                      372
                     </div>
-                    <div className="text-sm opacity-75">Clients</div>
+                    <div className="text-sm opacity-75">Commits</div>
                   </div>
                   <div className="text-center">
                     <div className="text-2xl font-bold bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
-                      100%
+                      2
                     </div>
-                    <div className="text-sm opacity-75">Quality Delivery</div>
+                    <div className="text-sm opacity-75">Full Stack</div>
                   </div>
                 </div>
               </div>
@@ -258,8 +268,8 @@ export default function About({ isDarkMode }) {
                   }`}
                 >
                   Currently, I'm focused on deepening my expertise in cloud
-                  architecture and full stack web development, while continuing to
-                  build innovative solutions that solve real-world problems.
+                  architecture and full stack web development, while continuing
+                  to build innovative solutions that solve real-world problems.
                 </p>
               </div>
             </div>
