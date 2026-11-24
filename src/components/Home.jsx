@@ -1,22 +1,18 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
+import { tagLines } from "../constants/Home/tagLines";
+import { techStack } from "../constants/Home/techStack";
+
 export function Home({ isDarkMode }) {
   const [text, setText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
   const [loopNum, setLoopNum] = useState(0);
   const [typingSpeed, setTypingSpeed] = useState(150);
 
-  const roles = [
-    "Into Reality",
-    "Into Solutions",
-    "Through Code",
-    "For Impact",
-  ];
-
   useEffect(() => {
     const handleTyping = () => {
-      const currentRole = roles[loopNum % roles.length];
+      const currentRole = tagLines[loopNum % tagLines.length];
       const updatedText = isDeleting
         ? currentRole.substring(0, text.length - 1)
         : currentRole.substring(0, text.length + 1);
@@ -38,26 +34,6 @@ export function Home({ isDarkMode }) {
     const timer = setTimeout(handleTyping, typingSpeed);
     return () => clearTimeout(timer);
   }, [text, isDeleting, loopNum, typingSpeed]);
-
-  // Tech stack with emoji mapping
-  const techStack = [
-    { name: "React", emoji: "⚛️" },
-    { name: "Laravel", emoji: "🔧" },
-    { name: "Bootstrap", emoji: "🖼️" },
-    { name: "Tailwind CSS", emoji: "🎨" },
-    { name: "Supabase", emoji: "☁️" },
-    { name: "JavaScript", emoji: "📘" },
-    { name: "Java", emoji: "☕" },
-    { name: "PHP", emoji: "🐘" },
-    { name: "Git", emoji: "🐙" },
-    { name: "Python", emoji: "🐍" },
-    { name: "Android Studio", emoji: "🤖" },
-    { name: "Postman", emoji: "📡" },
-    { name: "Figma", emoji: "✏️" },
-    { name: "MySQL", emoji: "🗄️" },
-    { name: "Vite", emoji: "⚡" },
-    { name: "Node.js", emoji: "🟢" },
-  ];
 
   return (
     <section className="min-h-[90vh] flex items-center md:mx-28">

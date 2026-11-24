@@ -1,0 +1,18 @@
+export const techStack = [
+  { name: "React", emoji: "⚛️" },
+  { name: "Laravel", emoji: "🔧" },
+  { name: "Bootstrap", emoji: "🖼️" },
+  { name: "Tailwind CSS", emoji: "🎨" },
+  { name: "Supabase", emoji: "☁️" },
+  { name: "JavaScript", emoji: "📘" },
+  { name: "Java", emoji: "☕" },
+  { name: "PHP", emoji: "🐘" },
+  { name: "Git", emoji: "🐙" },
+  { name: "Python", emoji: "🐍" },
+  { name: "Android Studio", emoji: "🤖" },
+  { name: "Postman", emoji: "📡" },
+  { name: "Figma", emoji: "✏️" },
+  { name: "MySQL", emoji: "🗄️" },
+  { name: "Vite", emoji: "⚡" },
+  { name: "Node.js", emoji: "🟢" },
+];
