@@ -8,7 +8,6 @@ import {
   Server,
   Database,
   Cloud,
-  Users,
   Award,
 } from "lucide-react";
 
@@ -63,7 +62,7 @@ export default function About({ isDarkMode }) {
   const certifications = [
     "Presenter Certificate – International Digital Expert Symposium (deXsym) 2025",
     "Workshop Participation Certificate - From Local to Web Hosting",
-    "Participant Certificate - Kursus Occupational Safety And Health Coordinator (OSHC)"
+    "Participant Certificate - Kursus Occupational Safety And Health Coordinator (OSHC)",
   ];
 
   return (
@@ -88,9 +87,8 @@ export default function About({ isDarkMode }) {
               isDarkMode ? "text-gray-400" : "text-gray-600"
             }`}
           >
-            Passionate Software Engineer with expertise in full-stack
-            development, cloud technologies, and creating exceptional digital
-            experiences
+            Passionate Software Engineer with expertise in web and mobile
+            development, creating exceptional digital experiences for users
           </p>
         </motion.div>
 
@@ -238,10 +236,10 @@ export default function About({ isDarkMode }) {
                     isDarkMode ? "text-gray-300" : "text-gray-600"
                   }`}
                 >
-                  As a passionate Software Engineer, I've dedicated
-                  myself to mastering both frontend and backend technologies. My
-                  journey began with simple HTML/CSS websites and has evolved
-                  into building complex, scalable applications using modern
+                  As a passionate Software Engineer, I've dedicated myself to
+                  mastering both frontend and backend technologies. My journey
+                  began with simple HTML/CSS websites and has evolved into
+                  building complex, scalable applications using modern
                   frameworks and cloud technologies.
                 </p>
                 <p
@@ -260,7 +258,7 @@ export default function About({ isDarkMode }) {
                   }`}
                 >
                   Currently, I'm focused on deepening my expertise in cloud
-                  architecture and full stack development, while continuing to
+                  architecture and full stack web development, while continuing to
                   build innovative solutions that solve real-world problems.
                 </p>
               </div>
@@ -281,7 +279,7 @@ export default function About({ isDarkMode }) {
                   "Tools",
                 ].map((category) => {
                   const categorySkills = skills.filter(
-                    (skill) => skill.category === category
+                    (skill) => skill.category === category,
                   );
                   if (categorySkills.length === 0) return null;
 
