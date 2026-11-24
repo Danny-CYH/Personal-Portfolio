@@ -1,3 +1,5 @@
+import { navItems } from "../constants/Navbar/navItems";
+
 const Navbar = ({
   isDarkMode,
   setIsDarkMode,
@@ -6,14 +8,6 @@ const Navbar = ({
   scrollToSection,
   activeSection,
 }) => {
-  const navItems = [
-    { id: "home", label: "Home" },
-    { id: "about", label: "About" },
-    { id: "experience", label: "Experience" },
-    { id: "projects", label: "Projects" },
-    { id: "contact", label: "Contact" },
-  ];
-
   return (
     <nav
       className={`fixed top-0 w-full z-50 transition-colors duration-300 ${
@@ -28,7 +22,7 @@ const Navbar = ({
           onClick={() => scrollToSection("home")}
           className="flex items-center text-xl font-bold hover:opacity-80 transition md:mx-10"
         >
-          <img src="/public/developer.png" alt="Logo" className="w-10 h-10 mr-3" />
+          <img src="/developer.png" alt="Logo" className="w-10 h-10 mr-3" />
           <span className="md:mt-1">Danny Cheng</span>
         </button>
 
