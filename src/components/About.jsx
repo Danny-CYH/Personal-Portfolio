@@ -279,7 +279,12 @@ export default function About({ isDarkMode }) {
                           <div key={skill.name}>
                             <div className="flex justify-between items-center mb-1">
                               <div className="flex items-center">
-                                <span className="mr-2">{skill.icon}</span>
+                                {/* <span className="mr-2">{skill.icon}</span> */}
+                                <img
+                                  src={skill.icon}
+                                  alt={skill.name}
+                                  className="mr-4 w-5 h-5 object-contain"
+                                />
                                 <span className="font-medium">
                                   {skill.name}
                                 </span>
@@ -287,7 +292,7 @@ export default function About({ isDarkMode }) {
                               <span className="font-bold">{skill.level}%</span>
                             </div>
                             <div
-                              className={`h-2 rounded-full ${
+                              className={`h-2 rounded-full mt-3 ${
                                 isDarkMode ? "bg-gray-700" : "bg-gray-300"
                               }`}
                             >
