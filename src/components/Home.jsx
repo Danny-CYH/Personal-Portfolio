@@ -324,9 +324,13 @@ export function Home({ isDarkMode }) {
                     repeat: Infinity,
                     delay: index * 0.1,
                   }}
-                  className="text-2xl"
+                  className="w-6 h-6 flex items-center justify-center"
                 >
-                  {tech.emoji}
+                  <img
+                    src={tech.icon}
+                    alt={tech.name}
+                    className="w-full h-full object-contain"
+                  />
                 </motion.div>
                 <span className="font-medium text-sm md:text-base">
                   {tech.name}
