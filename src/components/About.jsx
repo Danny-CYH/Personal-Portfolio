@@ -16,6 +16,8 @@ import { educations } from "../constants/About/educations";
 import { certifications } from "../constants/About/certifications";
 
 export default function About({ isDarkMode }) {
+  const categories = [...new Set(skills.map((skill) => skill.category))];
+
   return (
     <section className="py-20 px-4">
       <div className="container mx-auto">
@@ -88,20 +90,20 @@ export default function About({ isDarkMode }) {
                   <div className="flex items-center">
                     <GraduationCap className="w-5 h-5 text-blue-500 mr-3" />
                     <div>
-                      <p className="font-medium">Software Engineering</p>
-                      <p className="text-sm opacity-75">
+                      <p className="font-medium">
                         Bachelor of Science with Honours ( IT )
                       </p>
+                      <p className="text-sm opacity-75">Software Engineering</p>
                     </div>
                   </div>
 
                   <div className="flex items-center">
                     <GraduationCap className="w-5 h-5 text-blue-500 mr-3" />
                     <div>
-                      <p className="font-medium">Digital Technology</p>
-                      <p className="text-sm opacity-75">
+                      <p className="font-medium">
                         Diploma In Information Technology
                       </p>
+                      <p className="text-sm opacity-75">Digital Technology</p>
                     </div>
                   </div>
 
@@ -231,14 +233,7 @@ export default function About({ isDarkMode }) {
 
               {/* Skill Categories */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {[
-                  "Frontend",
-                  "Backend",
-                  "Database",
-                  "Cloud",
-                  "DevOps",
-                  "Tools",
-                ].map((category) => {
+                {categories.map((category) => {
                   const categorySkills = skills.filter(
                     (skill) => skill.category === category,
                   );
